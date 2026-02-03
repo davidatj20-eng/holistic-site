@@ -1,0 +1,64 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <Header />
+        <h1>{pageTitle}</h1>
+        <div class="svg">
+            <svg width="200px" height="200px" viewBox="0 0 300 300">
+                <path d="M50 263 28 13h245l-22 250 -101 28zm0 0"></path>
+            </svg>
+        </div>
+        <slot />
+        <Footer />
+    </body>
+</html>
+
+<style>
+    svg {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 1.5;
+        fill: rgb(30, 72, 126);
+        stroke: rgb(5, 38, 68);
+        stroke-width: 20px;
+    }
+    .svg {
+        /* display: flex; */
+    }
+
+    body {
+        height: 100vh;
+        
+        background:
+           radial-gradient(
+                120% 60% at top center,
+                rgba(92, 61, 140, 0.9) 0%,
+                rgba(92, 61, 140, 0.5) 35%,
+                rgb(0, 0, 0) 70%
+            ),
+            radial-gradient(
+                120% 100% at bottom center,
+                rgba(92, 61, 140, 0.9) 0%,
+                rgba(92, 61, 140, 0.5) 35%,
+                rgb(0, 0, 0) 70%
+            );
+
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        background-position: top, bottom;
+        color: rgb(255, 255, 255);
+    }
+</style>
