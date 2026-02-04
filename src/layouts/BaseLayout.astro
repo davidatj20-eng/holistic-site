@@ -31,8 +31,8 @@ const { pageTitle } = Astro.props;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-miterlimit: 1.5;
-        fill: rgb(30, 72, 126);
-        stroke: rgb(5, 38, 68);
+        fill: #1a1616;
+        stroke: #500f0f;
         stroke-width: 20px;
     }
     .svg {
@@ -50,7 +50,7 @@ const { pageTitle } = Astro.props;
                 rgb(0, 0, 0) 70%
             ),
             radial-gradient(
-                120% 100% at bottom center,
+                120% 60% at bottom center,
                 rgba(92, 61, 140, 0.9) 0%,
                 rgba(92, 61, 140, 0.5) 35%,
                 rgb(0, 0, 0) 70%
@@ -60,5 +60,10 @@ const { pageTitle } = Astro.props;
         background-size: 100% 50%;
         background-position: top, bottom;
         color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        text-align: center;
+        
     }
 </style>
