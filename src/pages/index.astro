@@ -1,7 +1,30 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Holistic";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Welcome to Holistic</h2>
+	<main>
+		<div class="svg">
+			<svg width="200px" height="200px" viewBox="0 0 300 300">
+				<path d="M50 263 28 13h245l-22 250 -101 28zm0 0"></path>
+			</svg>
+		</div>
+	</main>
 </BaseLayout>
+
+<style>
+	svg {
+		fill-rule: evenodd;
+		clip-rule: evenodd;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 1.5;
+		fill: #1a1616;
+		stroke: #500f0f;
+		stroke-width: 20px;
+	}
+	.svg {
+		/* display: flex; */
+	}
+</style>

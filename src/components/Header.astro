@@ -1,11 +1,63 @@
 ---
-import Navegation from '../components/Navegation.astro'
+import Navegation from "../components/Navegation.astro";
+const descriptions = [
+    "Servicio de Impresion 3D",
+    "Servicio de Diseño 3D",
+    "Servicio de Prototipado",
+];
+
+const { pageTitle } = Astro.props;
 ---
 
 <header>
     <Navegation />
+    <h1>{pageTitle}</h1>
+    <p id="rotating-text">{descriptions[0]}</p>
+    <div class="Fractal"><img src="../../public/Fracta2.png" alt="" /></div>
+    <script define:vars={{ descriptions }}>
+        let index = 0;
+        const el = document.getElementById("rotating-text");
+
+        setInterval(() => {
+            el.style.opacity = "0";
+            setTimeout(() => {
+                index = (index + 1) % descriptions.length;
+                el.textContent = descriptions[index];
+                el.style.opacity = "1";
+            }, 300);
+        }, 3000);
+    </script>
 </header>
 
 <style>
+    header {
+        height: 100vh;
+        display: grid;
 
+        font-family:
+            "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    }
+    #rotating-text {
+        transition: opacity 0.5s;
+    }
+    h1 {
+        text-align: center;
+        align-self: center;
+        font-size: 4em;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.5em;
+        align-self: center;
+    }
+
+    .Fractal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        width: 100%;
+    }
 </style>

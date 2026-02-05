@@ -12,38 +12,16 @@ const { pageTitle } = Astro.props;
         <title>{pageTitle}</title>
     </head>
     <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <div class="svg">
-            <svg width="200px" height="200px" viewBox="0 0 300 300">
-                <path d="M50 263 28 13h245l-22 250 -101 28zm0 0"></path>
-            </svg>
-        </div>
+        <Header pageTitle={pageTitle}/>
         <slot />
         <Footer />
     </body>
 </html>
 
 <style>
-    svg {
-        fill-rule: evenodd;
-        clip-rule: evenodd;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-miterlimit: 1.5;
-        fill: #1a1616;
-        stroke: #500f0f;
-        stroke-width: 20px;
-    }
-    .svg {
-        /* display: flex; */
-    }
-
     body {
-        height: 100vh;
-        
         background:
-           radial-gradient(
+            radial-gradient(
                 120% 60% at top center,
                 rgba(92, 61, 140, 0.9) 0%,
                 rgba(92, 61, 140, 0.5) 35%,
@@ -62,8 +40,7 @@ const { pageTitle } = Astro.props;
         color: rgb(255, 255, 255);
         display: flex;
         flex-direction: column;
-        justify-content:space-between;
+        justify-content: space-between;
         text-align: center;
-        
     }
 </style>
